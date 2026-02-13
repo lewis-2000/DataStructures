@@ -15,16 +15,233 @@
     <nav class="toc">
       <strong>Contents</strong>
       <ul>
+        <li><a href="#applications">Applications</a></li>
+        <li><a href="#systems">Systems</a></li>
         <li><a href="#arrays">Arrays</a></li>
         <li><a href="#linked-lists">Linked Lists</a></li>
         <li><a href="#stacks">Stacks</a></li>
         <li><a href="#queues">Queues</a></li>
         <li><a href="#trees">Trees</a></li>
         <li><a href="#algorithms">Algorithms</a></li>
+        <li><a href="#classification">Classification</a></li>
       </ul>
     </nav>
 
     <main>
+      <!-- ============================= -->
+      <!-- DATA STRUCTURE CLASSIFICATION -->
+      <!-- ============================= -->
+      <section id="classification">
+        <h2>Data Structure Classification</h2>
+
+        <p>
+          Data structures are classified based on how data is organized in
+          memory and how elements relate to each other.
+        </p>
+
+        <h3>1. Linear Data Structures</h3>
+        <p>
+          Linear data structures store data elements sequentially. Each element
+          is connected to its previous and next element.
+        </p>
+
+        <h4>a) Static Linear Data Structures</h4>
+        <p>
+          Static data structures have a fixed size defined at compile time.
+          Memory allocation cannot be changed during execution.
+        </p>
+
+        <ul>
+          <li>Arrays</li>
+        </ul>
+
+        <p><strong>Why used:</strong></p>
+        <ul>
+          <li>Fast random access using index</li>
+          <li>Efficient memory usage for fixed-size data</li>
+        </ul>
+
+        <p><strong>Applications:</strong></p>
+        <ul>
+          <li>Image processing (pixel matrices)</li>
+          <li>Storing fixed sensor readings</li>
+          <li>Lookup tables</li>
+        </ul>
+
+        <h4>b) Dynamic Linear Data Structures</h4>
+        <p>
+          Dynamic structures can grow or shrink during program execution. Memory
+          is allocated at runtime.
+        </p>
+
+        <ul>
+          <li>Linked Lists</li>
+          <li>Stacks</li>
+          <li>Queues</li>
+        </ul>
+
+        <p><strong>Why used:</strong></p>
+        <ul>
+          <li>Efficient insertion and deletion</li>
+          <li>No wasted memory due to fixed size</li>
+        </ul>
+
+        <p><strong>Applications:</strong></p>
+        <ul>
+          <li>Undo/Redo systems (Stacks)</li>
+          <li>CPU scheduling (Queues)</li>
+          <li>Dynamic memory management</li>
+        </ul>
+
+        <h3>2. Non-Linear Data Structures</h3>
+        <p>
+          Non-linear data structures store data hierarchically or graph-like,
+          allowing one-to-many relationships.
+        </p>
+
+        <h4>a) Trees</h4>
+        <p>
+          Trees consist of nodes connected in a hierarchical manner. Each tree
+          has a root and child nodes.
+        </p>
+
+        <p><strong>Why used:</strong></p>
+        <ul>
+          <li>Efficient searching and sorting</li>
+          <li>Represents hierarchical data naturally</li>
+        </ul>
+
+        <p><strong>Applications:</strong></p>
+        <ul>
+          <li>File systems</li>
+          <li>Database indexing (B-Trees)</li>
+          <li>DOM structure in web browsers</li>
+        </ul>
+
+        <h4>b) Graphs</h4>
+        <p>
+          Graphs consist of vertices (nodes) connected by edges. They can be
+          directed or undirected.
+        </p>
+
+        <p><strong>Why used:</strong></p>
+        <ul>
+          <li>Models real-world relationships</li>
+          <li>Supports complex connections</li>
+        </ul>
+
+        <p><strong>Applications:</strong></p>
+        <ul>
+          <li>Social networks</li>
+          <li>Routing algorithms</li>
+          <li>Maps and navigation systems</li>
+        </ul>
+      </section>
+
+      <!-- ============================= -->
+      <!-- APPLICATIONS & ALGORITHMS     -->
+      <!-- ============================= -->
+      <section id="applications">
+        <h2>Applications of Data Structures and Algorithms</h2>
+
+        <p>
+          Data structures are chosen based on the problem requirements and the
+          algorithm operating on them.
+        </p>
+
+        <h3>Arrays + Binary Search</h3>
+        <p>Binary search requires a sorted array to work efficiently.</p>
+
+        <p><strong>Used in:</strong></p>
+        <ul>
+          <li>Databases</li>
+          <li>Search engines</li>
+          <li>Operating system resource lookup</li>
+        </ul>
+
+        <p><strong>Reason:</strong></p>
+        <ul>
+          <li>O(log n) search time</li>
+          <li>Predictable memory layout</li>
+        </ul>
+
+        <h3>Stacks + Recursion</h3>
+        <p>Function calls are managed using stacks.</p>
+
+        <p><strong>Used in:</strong></p>
+        <ul>
+          <li>Program execution</li>
+          <li>Expression evaluation</li>
+          <li>Undo/Redo features</li>
+        </ul>
+
+        <p><strong>Reason:</strong></p>
+        <ul>
+          <li>Last function call must return first</li>
+        </ul>
+
+        <h3>Queues + Scheduling Algorithms</h3>
+        <p>Queues are used where tasks must be processed in order.</p>
+
+        <p><strong>Used in:</strong></p>
+        <ul>
+          <li>CPU scheduling</li>
+          <li>Printer queues</li>
+          <li>Network packet handling</li>
+        </ul>
+
+        <p><strong>Reason:</strong></p>
+        <ul>
+          <li>Fairness</li>
+          <li>Predictable processing order</li>
+        </ul>
+      </section>
+
+      <!-- ============================= -->
+      <!-- DATA STRUCTURES IN SYSTEMS    -->
+      <!-- ============================= -->
+      <section id="systems">
+        <h2>How Data Structures and Algorithms Work Within Systems</h2>
+
+        <p>
+          Data structures and algorithms form the foundation of all computer
+          systems. They determine system performance, scalability, and
+          reliability.
+        </p>
+
+        <h3>Operating Systems</h3>
+        <ul>
+          <li>Queues manage process scheduling</li>
+          <li>Stacks manage function calls and interrupts</li>
+          <li>Linked lists track memory blocks</li>
+        </ul>
+
+        <h3>Databases</h3>
+        <ul>
+          <li>Trees index large datasets</li>
+          <li>Hash tables provide fast lookups</li>
+          <li>Graphs represent relationships</li>
+        </ul>
+
+        <h3>Networking Systems</h3>
+        <ul>
+          <li>Graphs determine routing paths</li>
+          <li>Queues manage packet transmission</li>
+        </ul>
+
+        <h3>Software Applications</h3>
+        <ul>
+          <li>Text editors use stacks for undo operations</li>
+          <li>Games use trees for scene management</li>
+          <li>Web browsers use trees for HTML rendering</li>
+        </ul>
+
+        <p>
+          Efficient data structures combined with suitable algorithms ensure
+          systems are fast, scalable, and resource-efficient.
+        </p>
+      </section>
+
       <section id="arrays">
         <h2>Arrays</h2>
         <p>
@@ -229,6 +446,8 @@ int binarySearch(int arr[], int size, int target) {
 
         <p><strong>Time Complexity:</strong> O(log n)</p>
       </section>
+
+      <!-- Addition -->
     </main>
 
     <footer>
