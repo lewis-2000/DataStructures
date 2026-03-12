@@ -7,32 +7,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
+    <header class="hero">
+      <p class="eyebrow">C Notes Library</p>
       <h1>Data Structures & Algorithms</h1>
-      <p class="subtitle">Understandable explanations with C examples</p>
+      <p class="subtitle">
+        Understandable explanations with practical C snippets and system-level
+        context.
+      </p>
+      <div class="hero-meta">
+        <span>Core Topics: 9</span>
+        <span>Language: C</span>
+        <span>Use Case: Interview + Fundamentals</span>
+      </div>
     </header>
-
-    <nav id="toc" class="toc">
-      <strong>Contents</strong>
-      <ul>
-        <li><a href="#applications">Applications</a></li>
-        <li><a href="#systems">Systems</a></li>
-        <li><a href="#arrays">Arrays</a></li>
-        <li><a href="#linked-lists">Linked Lists</a></li>
-        <li><a href="#stacks">Stacks</a></li>
-        <li><a href="#queues">Queues</a></li>
-        <li><a href="#trees">Trees</a></li>
-        <li><a href="#algorithms">Algorithms</a></li>
-        <li><a href="#classification">Classification</a></li>
-      </ul>
-    </nav>
 
     <button
       id="toc-toggle"
@@ -40,233 +34,249 @@
       aria-expanded="false"
       aria-label="Open contents"
     >
-      ☰ Contents
+      Menu
     </button>
 
-    <main>
-      <!-- ============================= -->
-      <!-- DATA STRUCTURE CLASSIFICATION -->
-      <!-- ============================= -->
-      <section id="classification">
-        <h2>Data Structure Classification</h2>
-
-        <p>
-          Data structures are classified based on how data is organized in
-          memory and how elements relate to each other.
-        </p>
-
-        <h3>1. Linear Data Structures</h3>
-        <p>
-          Linear data structures store data elements sequentially. Each element
-          is connected to its previous and next element.
-        </p>
-
-        <h4>a) Static Linear Data Structures</h4>
-        <p>
-          Static data structures have a fixed size defined at compile time.
-          Memory allocation cannot be changed during execution.
-        </p>
-
+    <div class="layout">
+      <nav id="toc" class="toc">
+        <p class="toc-title">Contents</p>
         <ul>
-          <li>Arrays</li>
+          <li><a href="#applications">Applications</a></li>
+          <li><a href="#systems">Systems</a></li>
+          <li><a href="#arrays">Arrays</a></li>
+          <li><a href="#linked-lists">Linked Lists</a></li>
+          <li><a href="#stacks">Stacks</a></li>
+          <li><a href="#queues">Queues</a></li>
+          <li><a href="#trees">Trees</a></li>
+          <li><a href="#algorithms">Algorithms</a></li>
+          <li><a href="#classification">Classification</a></li>
         </ul>
+      </nav>
 
-        <p><strong>Why used:</strong></p>
-        <ul>
-          <li>Fast random access using index</li>
-          <li>Efficient memory usage for fixed-size data</li>
-        </ul>
+      <main>
+        <!-- ============================= -->
+        <!-- DATA STRUCTURE CLASSIFICATION -->
+        <!-- ============================= -->
+        <section id="classification">
+          <h2>Data Structure Classification</h2>
 
-        <p><strong>Applications:</strong></p>
-        <ul>
-          <li>Image processing (pixel matrices)</li>
-          <li>Storing fixed sensor readings</li>
-          <li>Lookup tables</li>
-        </ul>
+          <p>
+            Data structures are classified based on how data is organized in
+            memory and how elements relate to each other.
+          </p>
 
-        <h4>b) Dynamic Linear Data Structures</h4>
-        <p>
-          Dynamic structures can grow or shrink during program execution. Memory
-          is allocated at runtime.
-        </p>
+          <h3>1. Linear Data Structures</h3>
+          <p>
+            Linear data structures store data elements sequentially. Each
+            element is connected to its previous and next element.
+          </p>
 
-        <ul>
-          <li>Linked Lists</li>
-          <li>Stacks</li>
-          <li>Queues</li>
-        </ul>
+          <h4>a) Static Linear Data Structures</h4>
+          <p>
+            Static data structures have a fixed size defined at compile time.
+            Memory allocation cannot be changed during execution.
+          </p>
 
-        <p><strong>Why used:</strong></p>
-        <ul>
-          <li>Efficient insertion and deletion</li>
-          <li>No wasted memory due to fixed size</li>
-        </ul>
+          <ul>
+            <li>Arrays</li>
+          </ul>
 
-        <p><strong>Applications:</strong></p>
-        <ul>
-          <li>Undo/Redo systems (Stacks)</li>
-          <li>CPU scheduling (Queues)</li>
-          <li>Dynamic memory management</li>
-        </ul>
+          <p><strong>Why used:</strong></p>
+          <ul>
+            <li>Fast random access using index</li>
+            <li>Efficient memory usage for fixed-size data</li>
+          </ul>
 
-        <h3>2. Non-Linear Data Structures</h3>
-        <p>
-          Non-linear data structures store data hierarchically or graph-like,
-          allowing one-to-many relationships.
-        </p>
+          <p><strong>Applications:</strong></p>
+          <ul>
+            <li>Image processing (pixel matrices)</li>
+            <li>Storing fixed sensor readings</li>
+            <li>Lookup tables</li>
+          </ul>
 
-        <h4>a) Trees</h4>
-        <p>
-          Trees consist of nodes connected in a hierarchical manner. Each tree
-          has a root and child nodes.
-        </p>
+          <h4>b) Dynamic Linear Data Structures</h4>
+          <p>
+            Dynamic structures can grow or shrink during program execution.
+            Memory is allocated at runtime.
+          </p>
 
-        <p><strong>Why used:</strong></p>
-        <ul>
-          <li>Efficient searching and sorting</li>
-          <li>Represents hierarchical data naturally</li>
-        </ul>
+          <ul>
+            <li>Linked Lists</li>
+            <li>Stacks</li>
+            <li>Queues</li>
+          </ul>
 
-        <p><strong>Applications:</strong></p>
-        <ul>
-          <li>File systems</li>
-          <li>Database indexing (B-Trees)</li>
-          <li>DOM structure in web browsers</li>
-        </ul>
+          <p><strong>Why used:</strong></p>
+          <ul>
+            <li>Efficient insertion and deletion</li>
+            <li>No wasted memory due to fixed size</li>
+          </ul>
 
-        <h4>b) Graphs</h4>
-        <p>
-          Graphs consist of vertices (nodes) connected by edges. They can be
-          directed or undirected.
-        </p>
+          <p><strong>Applications:</strong></p>
+          <ul>
+            <li>Undo/Redo systems (Stacks)</li>
+            <li>CPU scheduling (Queues)</li>
+            <li>Dynamic memory management</li>
+          </ul>
 
-        <p><strong>Why used:</strong></p>
-        <ul>
-          <li>Models real-world relationships</li>
-          <li>Supports complex connections</li>
-        </ul>
+          <h3>2. Non-Linear Data Structures</h3>
+          <p>
+            Non-linear data structures store data hierarchically or graph-like,
+            allowing one-to-many relationships.
+          </p>
 
-        <p><strong>Applications:</strong></p>
-        <ul>
-          <li>Social networks</li>
-          <li>Routing algorithms</li>
-          <li>Maps and navigation systems</li>
-        </ul>
-      </section>
+          <h4>a) Trees</h4>
+          <p>
+            Trees consist of nodes connected in a hierarchical manner. Each tree
+            has a root and child nodes.
+          </p>
 
-      <!-- ============================= -->
-      <!-- APPLICATIONS & ALGORITHMS     -->
-      <!-- ============================= -->
-      <section id="applications">
-        <h2>Applications of Data Structures and Algorithms</h2>
+          <p><strong>Why used:</strong></p>
+          <ul>
+            <li>Efficient searching and sorting</li>
+            <li>Represents hierarchical data naturally</li>
+          </ul>
 
-        <p>
-          Data structures are chosen based on the problem requirements and the
-          algorithm operating on them.
-        </p>
+          <p><strong>Applications:</strong></p>
+          <ul>
+            <li>File systems</li>
+            <li>Database indexing (B-Trees)</li>
+            <li>DOM structure in web browsers</li>
+          </ul>
 
-        <h3>Arrays + Binary Search</h3>
-        <p>Binary search requires a sorted array to work efficiently.</p>
+          <h4>b) Graphs</h4>
+          <p>
+            Graphs consist of vertices (nodes) connected by edges. They can be
+            directed or undirected.
+          </p>
 
-        <p><strong>Used in:</strong></p>
-        <ul>
-          <li>Databases</li>
-          <li>Search engines</li>
-          <li>Operating system resource lookup</li>
-        </ul>
+          <p><strong>Why used:</strong></p>
+          <ul>
+            <li>Models real-world relationships</li>
+            <li>Supports complex connections</li>
+          </ul>
 
-        <p><strong>Reason:</strong></p>
-        <ul>
-          <li>O(log n) search time</li>
-          <li>Predictable memory layout</li>
-        </ul>
+          <p><strong>Applications:</strong></p>
+          <ul>
+            <li>Social networks</li>
+            <li>Routing algorithms</li>
+            <li>Maps and navigation systems</li>
+          </ul>
+        </section>
 
-        <h3>Stacks + Recursion</h3>
-        <p>Function calls are managed using stacks.</p>
+        <!-- ============================= -->
+        <!-- APPLICATIONS & ALGORITHMS     -->
+        <!-- ============================= -->
+        <section id="applications">
+          <h2>Applications of Data Structures and Algorithms</h2>
 
-        <p><strong>Used in:</strong></p>
-        <ul>
-          <li>Program execution</li>
-          <li>Expression evaluation</li>
-          <li>Undo/Redo features</li>
-        </ul>
+          <p>
+            Data structures are chosen based on the problem requirements and the
+            algorithm operating on them.
+          </p>
 
-        <p><strong>Reason:</strong></p>
-        <ul>
-          <li>Last function call must return first</li>
-        </ul>
+          <h3>Arrays + Binary Search</h3>
+          <p>Binary search requires a sorted array to work efficiently.</p>
 
-        <h3>Queues + Scheduling Algorithms</h3>
-        <p>Queues are used where tasks must be processed in order.</p>
+          <p><strong>Used in:</strong></p>
+          <ul>
+            <li>Databases</li>
+            <li>Search engines</li>
+            <li>Operating system resource lookup</li>
+          </ul>
 
-        <p><strong>Used in:</strong></p>
-        <ul>
-          <li>CPU scheduling</li>
-          <li>Printer queues</li>
-          <li>Network packet handling</li>
-        </ul>
+          <p><strong>Reason:</strong></p>
+          <ul>
+            <li>O(log n) search time</li>
+            <li>Predictable memory layout</li>
+          </ul>
 
-        <p><strong>Reason:</strong></p>
-        <ul>
-          <li>Fairness</li>
-          <li>Predictable processing order</li>
-        </ul>
-      </section>
+          <h3>Stacks + Recursion</h3>
+          <p>Function calls are managed using stacks.</p>
 
-      <!-- ============================= -->
-      <!-- DATA STRUCTURES IN SYSTEMS    -->
-      <!-- ============================= -->
-      <section id="systems">
-        <h2>How Data Structures and Algorithms Work Within Systems</h2>
+          <p><strong>Used in:</strong></p>
+          <ul>
+            <li>Program execution</li>
+            <li>Expression evaluation</li>
+            <li>Undo/Redo features</li>
+          </ul>
 
-        <p>
-          Data structures and algorithms form the foundation of all computer
-          systems. They determine system performance, scalability, and
-          reliability.
-        </p>
+          <p><strong>Reason:</strong></p>
+          <ul>
+            <li>Last function call must return first</li>
+          </ul>
 
-        <h3>Operating Systems</h3>
-        <ul>
-          <li>Queues manage process scheduling</li>
-          <li>Stacks manage function calls and interrupts</li>
-          <li>Linked lists track memory blocks</li>
-        </ul>
+          <h3>Queues + Scheduling Algorithms</h3>
+          <p>Queues are used where tasks must be processed in order.</p>
 
-        <h3>Databases</h3>
-        <ul>
-          <li>Trees index large datasets</li>
-          <li>Hash tables provide fast lookups</li>
-          <li>Graphs represent relationships</li>
-        </ul>
+          <p><strong>Used in:</strong></p>
+          <ul>
+            <li>CPU scheduling</li>
+            <li>Printer queues</li>
+            <li>Network packet handling</li>
+          </ul>
 
-        <h3>Networking Systems</h3>
-        <ul>
-          <li>Graphs determine routing paths</li>
-          <li>Queues manage packet transmission</li>
-        </ul>
+          <p><strong>Reason:</strong></p>
+          <ul>
+            <li>Fairness</li>
+            <li>Predictable processing order</li>
+          </ul>
+        </section>
 
-        <h3>Software Applications</h3>
-        <ul>
-          <li>Text editors use stacks for undo operations</li>
-          <li>Games use trees for scene management</li>
-          <li>Web browsers use trees for HTML rendering</li>
-        </ul>
+        <!-- ============================= -->
+        <!-- DATA STRUCTURES IN SYSTEMS    -->
+        <!-- ============================= -->
+        <section id="systems">
+          <h2>How Data Structures and Algorithms Work Within Systems</h2>
 
-        <p>
-          Efficient data structures combined with suitable algorithms ensure
-          systems are fast, scalable, and resource-efficient.
-        </p>
-      </section>
+          <p>
+            Data structures and algorithms form the foundation of all computer
+            systems. They determine system performance, scalability, and
+            reliability.
+          </p>
 
-      <section id="arrays">
-        <h2>Arrays</h2>
-        <p>
-          An <strong>array</strong> stores elements in contiguous memory
-          locations. This allows constant-time access using an index.
-        </p>
+          <h3>Operating Systems</h3>
+          <ul>
+            <li>Queues manage process scheduling</li>
+            <li>Stacks manage function calls and interrupts</li>
+            <li>Linked lists track memory blocks</li>
+          </ul>
 
-        <h3>Example</h3>
-        <pre><code>
+          <h3>Databases</h3>
+          <ul>
+            <li>Trees index large datasets</li>
+            <li>Hash tables provide fast lookups</li>
+            <li>Graphs represent relationships</li>
+          </ul>
+
+          <h3>Networking Systems</h3>
+          <ul>
+            <li>Graphs determine routing paths</li>
+            <li>Queues manage packet transmission</li>
+          </ul>
+
+          <h3>Software Applications</h3>
+          <ul>
+            <li>Text editors use stacks for undo operations</li>
+            <li>Games use trees for scene management</li>
+            <li>Web browsers use trees for HTML rendering</li>
+          </ul>
+
+          <p>
+            Efficient data structures combined with suitable algorithms ensure
+            systems are fast, scalable, and resource-efficient.
+          </p>
+        </section>
+
+        <section id="arrays">
+          <h2>Arrays</h2>
+          <p>
+            An <strong>array</strong> stores elements in contiguous memory
+            locations. This allows constant-time access using an index.
+          </p>
+
+          <h3>Example</h3>
+          <pre><code>
 #include &lt;stdio.h&gt;
 
 int main() {
@@ -279,42 +289,42 @@ int main() {
 }
   </code></pre>
 
-        <h3>Why insertion is expensive</h3>
-        <p>
-          To insert an element in the middle, all following elements must be
-          shifted.
-        </p>
+          <h3>Why insertion is expensive</h3>
+          <p>
+            To insert an element in the middle, all following elements must be
+            shifted.
+          </p>
 
-        <h3>Time Complexity</h3>
-        <table>
-          <tr>
-            <th>Operation</th>
-            <th>Time</th>
-          </tr>
-          <tr>
-            <td>Access</td>
-            <td>O(1)</td>
-          </tr>
-          <tr>
-            <td>Search</td>
-            <td>O(n)</td>
-          </tr>
-          <tr>
-            <td>Insert / Delete</td>
-            <td>O(n)</td>
-          </tr>
-        </table>
-      </section>
+          <h3>Time Complexity</h3>
+          <table>
+            <tr>
+              <th>Operation</th>
+              <th>Time</th>
+            </tr>
+            <tr>
+              <td>Access</td>
+              <td>O(1)</td>
+            </tr>
+            <tr>
+              <td>Search</td>
+              <td>O(n)</td>
+            </tr>
+            <tr>
+              <td>Insert / Delete</td>
+              <td>O(n)</td>
+            </tr>
+          </table>
+        </section>
 
-      <section id="linked-lists">
-        <h2>Linked Lists</h2>
-        <p>
-          A <strong>linked list</strong> is made of nodes where each node
-          contains data and a pointer to the next node.
-        </p>
+        <section id="linked-lists">
+          <h2>Linked Lists</h2>
+          <p>
+            A <strong>linked list</strong> is made of nodes where each node
+            contains data and a pointer to the next node.
+          </p>
 
-        <h3>Node Definition</h3>
-        <pre><code>
+          <h3>Node Definition</h3>
+          <pre><code>
 #include &lt;stdlib.h&gt;
 
 struct Node {
@@ -323,8 +333,8 @@ struct Node {
 };
   </code></pre>
 
-        <h3>Create and Link Nodes</h3>
-        <pre><code>
+          <h3>Create and Link Nodes</h3>
+          <pre><code>
 struct Node* head = malloc(sizeof(struct Node));
 head->data = 10;
 head->next = malloc(sizeof(struct Node));
@@ -332,20 +342,20 @@ head->next->data = 20;
 head->next->next = NULL;
   </code></pre>
 
-        <p class="note">
-          Linked lists trade fast access for fast insertion and deletion.
-        </p>
-      </section>
+          <p class="note">
+            Linked lists trade fast access for fast insertion and deletion.
+          </p>
+        </section>
 
-      <section id="stacks">
-        <h2>Stacks</h2>
-        <p>
-          A <strong>stack</strong> follows the <strong>LIFO</strong> principle
-          (Last In, First Out).
-        </p>
+        <section id="stacks">
+          <h2>Stacks</h2>
+          <p>
+            A <strong>stack</strong> follows the <strong>LIFO</strong> principle
+            (Last In, First Out).
+          </p>
 
-        <h3>Array-Based Stack</h3>
-        <pre><code>
+          <h3>Array-Based Stack</h3>
+          <pre><code>
 #define MAX 5
 int stack[MAX];
 int top = -1;
@@ -361,18 +371,18 @@ int pop() {
 }
   </code></pre>
 
-        <p>Used in function calls, recursion, undo/redo operations.</p>
-      </section>
+          <p>Used in function calls, recursion, undo/redo operations.</p>
+        </section>
 
-      <section id="queues">
-        <h2>Queues</h2>
-        <p>
-          A <strong>queue</strong> follows the <strong>FIFO</strong> principle
-          (First In, First Out).
-        </p>
+        <section id="queues">
+          <h2>Queues</h2>
+          <p>
+            A <strong>queue</strong> follows the <strong>FIFO</strong> principle
+            (First In, First Out).
+          </p>
 
-        <h3>Simple Queue Implementation</h3>
-        <pre><code>
+          <h3>Simple Queue Implementation</h3>
+          <pre><code>
 #define MAX 5
 int queue[MAX];
 int front = 0, rear = -1;
@@ -388,20 +398,20 @@ int dequeue() {
 }
   </code></pre>
 
-        <p class="note">
-          Queues are essential for BFS and scheduling algorithms.
-        </p>
-      </section>
+          <p class="note">
+            Queues are essential for BFS and scheduling algorithms.
+          </p>
+        </section>
 
-      <section id="trees">
-        <h2>Trees</h2>
-        <p>
-          A <strong>tree</strong> is a hierarchical data structure made of
-          nodes.
-        </p>
+        <section id="trees">
+          <h2>Trees</h2>
+          <p>
+            A <strong>tree</strong> is a hierarchical data structure made of
+            nodes.
+          </p>
 
-        <h3>Binary Tree Node</h3>
-        <pre><code>
+          <h3>Binary Tree Node</h3>
+          <pre><code>
 struct TreeNode {
     int data;
     struct TreeNode* left;
@@ -409,8 +419,8 @@ struct TreeNode {
 };
   </code></pre>
 
-        <h3>Create a Node</h3>
-        <pre><code>
+          <h3>Create a Node</h3>
+          <pre><code>
 struct TreeNode* newNode(int value) {
     struct TreeNode* node = malloc(sizeof(struct TreeNode));
     node->data = value;
@@ -419,15 +429,15 @@ struct TreeNode* newNode(int value) {
     return node;
 }
   </code></pre>
-      </section>
+        </section>
 
-      <section id="algorithms">
-        <h2>Algorithms</h2>
+        <section id="algorithms">
+          <h2>Algorithms</h2>
 
-        <h3>Linear Search</h3>
-        <p>Checks each element until the target is found.</p>
+          <h3>Linear Search</h3>
+          <p>Checks each element until the target is found.</p>
 
-        <pre><code>
+          <pre><code>
 int linearSearch(int arr[], int size, int target) {
     for (int i = 0; i < size; i++) {
         if (arr[i] == target)
@@ -437,12 +447,12 @@ int linearSearch(int arr[], int size, int target) {
 }
   </code></pre>
 
-        <p><strong>Time Complexity:</strong> O(n)</p>
+          <p><strong>Time Complexity:</strong> O(n)</p>
 
-        <h3>Binary Search</h3>
-        <p>Works on sorted arrays by repeatedly halving the search space.</p>
+          <h3>Binary Search</h3>
+          <p>Works on sorted arrays by repeatedly halving the search space.</p>
 
-        <pre><code>
+          <pre><code>
 int binarySearch(int arr[], int size, int target) {
     int left = 0, right = size - 1;
 
@@ -460,27 +470,32 @@ int binarySearch(int arr[], int size, int target) {
 }
   </code></pre>
 
-        <p><strong>Time Complexity:</strong> O(log n)</p>
-      </section>
+          <p><strong>Time Complexity:</strong> O(log n)</p>
+        </section>
 
-      <!-- Addition -->
-    </main>
+        <!-- Addition -->
+      </main>
+    </div>
 
     <footer>
-      <p>Group discussion notes • C-focused explanations</p>
+      <p>Group discussion notes | C-focused explanations</p>
     </footer>
     <script>
       const toc = document.getElementById("toc");
       const toggleBtn = document.getElementById("toc-toggle");
 
       toggleBtn.addEventListener("click", () => {
-        toc.classList.toggle("active");
+        const isOpen = toc.classList.toggle("active");
+        toggleBtn.setAttribute("aria-expanded", String(isOpen));
+        document.body.classList.toggle("menu-open", isOpen);
       });
 
       // Optional: close TOC if link is clicked
       toc.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
           toc.classList.remove("active");
+          toggleBtn.setAttribute("aria-expanded", "false");
+          document.body.classList.remove("menu-open");
         });
       });
     </script>
