@@ -435,7 +435,12 @@ struct TreeNode* newNode(int value) {
           <h2>Algorithms</h2>
 
           <h3>Linear Search</h3>
-          <p>Checks each element until the target is found.</p>
+          <p>
+            Checks each element from left to right until the target is found.
+          </p>
+
+          <p><strong>Input:</strong> arr = [7, 2, 9, 4], target = 9</p>
+          <p><strong>Output:</strong> index = 2</p>
 
           <pre><code>
 int linearSearch(int arr[], int size, int target) {
@@ -451,6 +456,9 @@ int linearSearch(int arr[], int size, int target) {
 
           <h3>Binary Search</h3>
           <p>Works on sorted arrays by repeatedly halving the search space.</p>
+
+          <p><strong>Input:</strong> arr = [2, 4, 7, 9, 12, 18], target = 12</p>
+          <p><strong>Output:</strong> index = 4</p>
 
           <pre><code>
 int binarySearch(int arr[], int size, int target) {
@@ -471,6 +479,140 @@ int binarySearch(int arr[], int size, int target) {
   </code></pre>
 
           <p><strong>Time Complexity:</strong> O(log n)</p>
+
+          <h3>Inorder Traversal (Binary Tree)</h3>
+          <p>Visits nodes in left, root, right order.</p>
+
+          <p><strong>Input Tree:</strong></p>
+          <pre><code>
+    50
+   /  \
+ 30    70
+  </code></pre>
+
+          <p><strong>Output:</strong> 30 50 70</p>
+
+          <pre><code>
+void inorder(struct TreeNode* root) {
+    if (root) {
+        inorder(root->left);
+        printf("%d ", root->data);
+        inorder(root->right);
+    }
+}
+  </code></pre>
+
+          <p><strong>Time Complexity:</strong> O(n)</p>
+
+          <h3>Hash Table Search (Chaining)</h3>
+          <p>Finds a key by checking entries in the computed bucket.</p>
+
+          <p>
+            <strong>Input Operations:</strong> insert(1, 100), insert(11, 200),
+            search(11)
+          </p>
+          <p><strong>Output:</strong> Found key 11 with value 200</p>
+
+          <pre><code>
+int hash(int key) {
+    return key % TABLE_SIZE;
+}
+
+struct Entry* searchHash(int key) {
+    int h = hash(key);
+    struct Entry* e = table[h];
+
+    while (e) {
+        if (e->key == key)
+            return e;
+        e = e->next;
+    }
+    return NULL;
+}
+  </code></pre>
+
+          <p><strong>Average Time Complexity:</strong> O(1)</p>
+          <p><strong>Worst Case Time Complexity:</strong> O(n)</p>
+
+          <h3>Sorting Algorithms</h3>
+          <p>
+            Sorting arranges elements in ascending or descending order to make
+            later operations (like searching) more efficient.
+          </p>
+
+          <h3>Bubble Sort</h3>
+          <p>
+            Compares adjacent elements and swaps when they are out of order.
+          </p>
+          <p><strong>Input:</strong> arr = [5, 1, 4, 2]</p>
+          <p><strong>Output:</strong> arr = [1, 2, 4, 5]</p>
+
+          <pre><code>
+void bubbleSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+  </code></pre>
+
+          <p><strong>Time Complexity:</strong> O(n^2)</p>
+
+          <h3>Selection Sort</h3>
+          <p>
+            Selects the minimum value from the unsorted part and places it in
+            the next sorted position.
+          </p>
+          <p><strong>Input:</strong> arr = [29, 10, 14, 37, 13]</p>
+          <p><strong>Output:</strong> arr = [10, 13, 14, 29, 37]</p>
+
+          <pre><code>
+void selectionSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[minIndex])
+                minIndex = j;
+        }
+
+        int temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+    }
+}
+  </code></pre>
+
+          <p><strong>Time Complexity:</strong> O(n^2)</p>
+
+          <h3>Insertion Sort</h3>
+          <p>
+            Builds a sorted left side by inserting each new element into its
+            correct position.
+          </p>
+          <p><strong>Input:</strong> arr = [9, 5, 1, 4, 3]</p>
+          <p><strong>Output:</strong> arr = [1, 3, 4, 5, 9]</p>
+
+          <pre><code>
+void insertionSort(int arr[], int n) {
+    for (int i = 1; i < n; i++) {
+        int key = arr[i];
+        int j = i - 1;
+
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+}
+  </code></pre>
+
+          <p><strong>Time Complexity:</strong> O(n^2)</p>
         </section>
 
         <!-- Addition -->
