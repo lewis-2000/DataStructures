@@ -41,6 +41,7 @@
       <nav id="toc" class="toc">
         <p class="toc-title">Contents</p>
         <ul>
+          <li><a href="#concept-notes">Comprehensive Notes</a></li>
           <li><a href="#applications">Applications</a></li>
           <li><a href="#systems">Systems</a></li>
           <li><a href="#arrays">Arrays</a></li>
@@ -49,11 +50,213 @@
           <li><a href="#queues">Queues</a></li>
           <li><a href="#trees">Trees</a></li>
           <li><a href="#algorithms">Algorithms</a></li>
+          <li><a href="#unit-pack">Unit Pack</a></li>
           <li><a href="#classification">Classification</a></li>
         </ul>
       </nav>
 
       <main>
+        <section id="concept-notes">
+          <h2>Comprehensive Concept Notes</h2>
+
+          <p>
+            This section summarizes the complete unit in one place: what each
+            concept means, why it is used, and what complexity trade-offs to
+            remember for exams and assignments.
+          </p>
+
+          <h3>Complexity and Performance Basics</h3>
+          <ul>
+            <li>
+              <strong>Big O:</strong> Upper bound of growth (worst-case trend)
+            </li>
+            <li>
+              <strong>Big Theta:</strong> Tight bound (exact growth order)
+            </li>
+            <li><strong>Big Omega:</strong> Lower bound (best-case trend)</li>
+            <li>
+              Typical growth ranking: O(1) &lt; O(log n) &lt; O(n) &lt; O(n log
+              n) &lt; O(n^2)
+            </li>
+            <li>
+              In real systems, complexity and constants both matter. For small
+              inputs, a theoretically slower algorithm can still be faster.
+            </li>
+          </ul>
+
+          <h3>Linear vs Non-Linear Structures</h3>
+          <p>
+            Linear structures arrange elements in sequence (arrays, linked
+            lists, stacks, queues). Non-linear structures represent hierarchy or
+            networks (trees, graphs).
+          </p>
+          <ul>
+            <li>
+              <strong>Linear:</strong> Easier traversal logic, often simpler to
+              implement.
+            </li>
+            <li>
+              <strong>Non-linear:</strong> Better for hierarchical relationships
+              and many-to-many connections.
+            </li>
+          </ul>
+
+          <h3>Arrays</h3>
+          <ul>
+            <li>Contiguous memory gives constant-time index access: O(1).</li>
+            <li>Insertion/deletion in the middle requires shifting: O(n).</li>
+            <li>Best when size is known and fast random access is needed.</li>
+          </ul>
+
+          <h3>Linked Lists</h3>
+          <ul>
+            <li>
+              Nodes are not contiguous; each node stores data and next pointer.
+            </li>
+            <li>
+              Insertion/deletion at a known node is efficient: O(1) pointer
+              updates.
+            </li>
+            <li>Search is sequential: O(n).</li>
+            <li>
+              Best when frequent structural updates matter more than direct
+              indexing.
+            </li>
+          </ul>
+
+          <h3>Stacks and Queues</h3>
+          <ul>
+            <li><strong>Stack:</strong> LIFO, push/pop on top, O(1).</li>
+            <li>
+              Use stack for recursion frames, expression evaluation, undo/redo.
+            </li>
+            <li>
+              <strong>Queue:</strong> FIFO, enqueue at rear, dequeue at front.
+            </li>
+            <li>
+              Use queue for scheduling, buffering, and breadth-first traversal.
+            </li>
+          </ul>
+
+          <h3>Trees and BST</h3>
+          <ul>
+            <li>
+              Trees model hierarchical data such as folders, organization, and
+              syntax trees.
+            </li>
+            <li>
+              Traversals: preorder (root-left-right), inorder (left-root-right),
+              postorder (left-right-root).
+            </li>
+            <li>
+              BST rule enables faster search when balanced: average O(log n).
+            </li>
+            <li>Skewed BST behaves like a list, causing worst-case O(n).</li>
+          </ul>
+
+          <h3>Hash Tables</h3>
+          <ul>
+            <li>
+              Hash function maps key to index. Collisions are unavoidable and
+              must be handled.
+            </li>
+            <li>
+              Chaining stores collided entries in a linked list at the same
+              index.
+            </li>
+            <li>
+              Average insert/search/delete is O(1) with good hash distribution.
+            </li>
+            <li>Poor distribution or high load factor can degrade to O(n).</li>
+          </ul>
+
+          <h3>Graphs, BFS, and DFS</h3>
+          <ul>
+            <li>
+              Graphs represent entities and relationships (maps, social links,
+              routing).
+            </li>
+            <li>
+              <strong>BFS:</strong> Level-order exploration using a queue,
+              useful for shortest path in unweighted graphs.
+            </li>
+            <li>
+              <strong>DFS:</strong> Depth-first exploration using recursion or a
+              stack, useful for connectivity and cycle detection.
+            </li>
+            <li>Traversal complexity is O(V + E) with adjacency lists.</li>
+          </ul>
+
+          <h3>Searching Algorithms</h3>
+          <ul>
+            <li>
+              <strong>Linear Search:</strong> Works on unsorted data, O(n).
+            </li>
+            <li>
+              <strong>Binary Search:</strong> Requires sorted data, O(log n),
+              repeatedly halves the search interval.
+            </li>
+          </ul>
+
+          <h3>Sorting Algorithms</h3>
+          <ul>
+            <li>
+              <strong>Bubble Sort:</strong> Easy to understand, many swaps,
+              usually O(n^2).
+            </li>
+            <li>
+              <strong>Selection Sort:</strong> Fewer swaps, still O(n^2), not
+              stable in standard form.
+            </li>
+            <li>
+              <strong>Insertion Sort:</strong> Efficient for nearly sorted and
+              small arrays; best case O(n).
+            </li>
+            <li>
+              <strong>Merge Sort:</strong> Stable O(n log n), needs extra
+              memory.
+            </li>
+            <li>
+              <strong>Quick Sort:</strong> Very fast in practice on average,
+              worst-case O(n^2) with poor pivots.
+            </li>
+          </ul>
+
+          <h3>Dynamic Programming vs Greedy</h3>
+          <ul>
+            <li>
+              <strong>Greedy:</strong> Makes locally best choices now; may fail
+              to produce global optimum.
+            </li>
+            <li>
+              <strong>Dynamic Programming:</strong> Solves overlapping
+              subproblems and stores results to guarantee optimal solutions for
+              suitable problems.
+            </li>
+            <li>
+              Coin change is a classic case where greedy can be non-optimal,
+              while DP finds the best answer.
+            </li>
+          </ul>
+
+          <h3>Exam-Focused Selection Guide</h3>
+          <ul>
+            <li>Need direct indexed access: choose arrays.</li>
+            <li>Need frequent middle insert/delete: choose linked lists.</li>
+            <li>Need undo/backtracking: choose stack.</li>
+            <li>Need fairness/first-come service: choose queue.</li>
+            <li>
+              Need hierarchical representation and ordered lookup: choose BST or
+              balanced tree.
+            </li>
+            <li>
+              Need very fast key-value access: choose hash table (with careful
+              hashing).
+            </li>
+            <li>Need relationship modeling: choose graph.</li>
+          </ul>
+        </section>
+
         <!-- ============================= -->
         <!-- DATA STRUCTURE CLASSIFICATION -->
         <!-- ============================= -->
@@ -613,6 +816,130 @@ void insertionSort(int arr[], int n) {
   </code></pre>
 
           <p><strong>Time Complexity:</strong> O(n^2)</p>
+        </section>
+
+        <section id="unit-pack">
+          <h2>Unit Completion Pack</h2>
+
+          <h3>Sorting Comparison Matrix</h3>
+          <table>
+            <tr>
+              <th>Algorithm</th>
+              <th>Best</th>
+              <th>Average</th>
+              <th>Worst</th>
+              <th>Stable</th>
+              <th>In-place</th>
+            </tr>
+            <tr>
+              <td>Bubble Sort</td>
+              <td>O(n)</td>
+              <td>O(n^2)</td>
+              <td>O(n^2)</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Selection Sort</td>
+              <td>O(n^2)</td>
+              <td>O(n^2)</td>
+              <td>O(n^2)</td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Insertion Sort</td>
+              <td>O(n)</td>
+              <td>O(n^2)</td>
+              <td>O(n^2)</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Merge Sort</td>
+              <td>O(n log n)</td>
+              <td>O(n log n)</td>
+              <td>O(n log n)</td>
+              <td>Yes</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Quick Sort</td>
+              <td>O(n log n)</td>
+              <td>O(n log n)</td>
+              <td>O(n^2)</td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+          </table>
+
+          <h3>BFS and DFS (Worked Graph Example)</h3>
+          <p><strong>Adjacency List:</strong></p>
+          <pre><code>
+0: 1, 2
+1: 0, 3, 4
+2: 0, 5
+3: 1
+4: 1, 5
+5: 2, 4
+  </code></pre>
+
+          <p><strong>Start Vertex:</strong> 0</p>
+          <p><strong>BFS Output:</strong> 0 1 2 3 4 5</p>
+          <p><strong>DFS Output (one valid order):</strong> 0 1 3 4 5 2</p>
+          <p><strong>Complexity:</strong> O(V + E) with adjacency list</p>
+
+          <h3>Binary Search Tree (Insert/Search/Delete)</h3>
+          <p>
+            BST rule: left subtree values are smaller, right subtree values are
+            larger.
+          </p>
+          <p><strong>Insert Sequence:</strong> 50, 30, 70, 20, 40, 60, 80</p>
+          <p><strong>Search Example:</strong> search(60) -> found</p>
+
+          <pre><code>
+struct TreeNode* searchBST(struct TreeNode* root, int key) {
+    if (root == NULL || root->data == key)
+        return root;
+    if (key < root->data)
+        return searchBST(root->left, key);
+    return searchBST(root->right, key);
+}
+  </code></pre>
+
+          <p><strong>Average Insert/Search/Delete:</strong> O(log n)</p>
+          <p><strong>Worst Case (skewed tree):</strong> O(n)</p>
+
+          <h3>Dynamic Programming vs Greedy (Coin Change)</h3>
+          <p>
+            <strong>Problem:</strong> Amount = 6, coins = [1, 3, 4], minimum
+            number of coins.
+          </p>
+          <p>
+            <strong>Greedy Result:</strong> 4 + 1 + 1 = 3 coins (not optimal)
+          </p>
+          <p><strong>DP Optimal Result:</strong> 3 + 3 = 2 coins</p>
+
+          <pre><code>
+int minCoinsDP(int amount, int coins[], int m) {
+    int dp[100];
+    dp[0] = 0;
+
+    for (int i = 1; i <= amount; i++)
+        dp[i] = 1000000;
+
+    for (int i = 1; i <= amount; i++) {
+        for (int j = 0; j < m; j++) {
+            if (coins[j] <= i && dp[i - coins[j]] + 1 < dp[i])
+                dp[i] = dp[i - coins[j]] + 1;
+        }
+    }
+
+    return dp[amount];
+}
+  </code></pre>
+
+          <p><strong>Complexity:</strong> O(amount * number_of_coins)</p>
         </section>
 
         <!-- Addition -->
