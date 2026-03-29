@@ -41,7 +41,7 @@ You’ll see outputs showcasing each data structure in action:
 DataStructuresExample.exe
 ```
 
-## Expected output
+### Expected output
 
 ```bash
 $ ./DataStructuresExample.exe
