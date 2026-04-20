@@ -41,6 +41,11 @@ body {
     linear-gradient(160deg, #fdf8ed 0%, #f7efe0 52%, #fdf8ed 100%);
 }
 
+/* Prevent stray horizontal overflow from long tokens on narrow screens. */
+* {
+  min-width: 0;
+}
+
 .hero {
   max-width: 1200px;
   margin: 0 auto 1.4rem;
@@ -201,6 +206,17 @@ li {
   color: #2b3a54;
 }
 
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+th,
+td {
+  overflow-wrap: anywhere;
+}
+
 pre {
   margin: 0.85rem 0;
   padding: 1rem;
@@ -223,6 +239,27 @@ table {
   border-collapse: collapse;
   margin-top: 0.9rem;
   border: 1px solid var(--edge);
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll {
+  margin-top: 0.9rem;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--edge);
+  border-radius: 12px;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+.table-scroll table {
+  margin-top: 0;
+  border: none;
+  width: max-content;
+  min-width: 100%;
 }
 
 th,
@@ -263,6 +300,7 @@ footer {
 @media (max-width: 920px) {
   body {
     padding: 0.9rem;
+    overflow-x: clip;
   }
 
   .layout {
@@ -310,6 +348,43 @@ footer {
 
   section {
     padding: 1.1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .table-scroll {
+    background: linear-gradient(
+        to left,
+        rgba(24, 34, 53, 0.14) 0,
+        rgba(24, 34, 53, 0) 20px
+      )
+      right center / 24px 100% no-repeat;
+  }
+
+  .table-scroll::after {
+    content: "Swipe table horizontally";
+    display: block;
+    margin-left: auto;
+    width: max-content;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #4b5872;
+    letter-spacing: 0.02em;
+    padding: 0.3rem 0.55rem 0.45rem;
+    background: linear-gradient(
+      to left,
+      rgba(255, 252, 245, 0.98),
+      rgba(255, 252, 245, 0.78)
+    );
+    border-radius: 0 0 10px 10px;
+  }
+
+  pre {
+    max-width: 100%;
   }
 }
 

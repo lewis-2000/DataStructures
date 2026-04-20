@@ -22,7 +22,7 @@
         context.
       </p>
       <div class="hero-meta">
-        <span>Core Topics: 9</span>
+        <span>Core Topics: 20+</span>
         <span>Language: C</span>
         <span>Use Case: Interview + Fundamentals</span>
       </div>
@@ -50,8 +50,12 @@
           <li><a href="#queues">Queues</a></li>
           <li><a href="#trees">Trees</a></li>
           <li><a href="#algorithms">Algorithms</a></li>
+          <li><a href="#advanced-topics">Advanced Topics</a></li>
+          <li><a href="#extra-core-topics">Extra Core Topics</a></li>
           <li><a href="#unit-pack">Unit Pack</a></li>
+          <li><a href="#practice-bank">Practice Bank</a></li>
           <li><a href="#classification">Classification</a></li>
+          <li><a href="#coverage-checklist">Coverage Checklist</a></li>
         </ul>
       </nav>
 
@@ -68,12 +72,13 @@
           <h3>Complexity and Performance Basics</h3>
           <ul>
             <li>
-              <strong>Big O:</strong> Upper bound of growth (worst-case trend)
+              <strong>Big O:</strong> Asymptotic upper bound on growth rate.
             </li>
             <li>
-              <strong>Big Theta:</strong> Tight bound (exact growth order)
+              <strong>Big Theta:</strong> Tight asymptotic bound (same order
+              upper and lower bound).
             </li>
-            <li><strong>Big Omega:</strong> Lower bound (best-case trend)</li>
+            <li><strong>Big Omega:</strong> Asymptotic lower bound.</li>
             <li>
               Typical growth ranking: O(1) &lt; O(log n) &lt; O(n) &lt; O(n log
               n) &lt; O(n^2)
@@ -602,6 +607,11 @@ int dequeue() {
   </code></pre>
 
           <p class="note">
+            This is a linear array queue. For long-running operations, prefer a
+            circular queue so freed front slots can be reused.
+          </p>
+
+          <p class="note">
             Queues are essential for BFS and scheduling algorithms.
           </p>
         </section>
@@ -818,60 +828,171 @@ void insertionSort(int arr[], int n) {
           <p><strong>Time Complexity:</strong> O(n^2)</p>
         </section>
 
+        <section id="advanced-topics">
+          <h2>Advanced Topics You Should Know for Exams</h2>
+
+          <p>
+            These topics are commonly tested in midterm/final papers and coding
+            rounds, but are often missed in short notes.
+          </p>
+
+          <h3>Heaps and Priority Queues</h3>
+          <ul>
+            <li>A binary heap is a complete binary tree stored in an array.</li>
+            <li>
+              <strong>Min-Heap:</strong> parent &lt;= children,
+              <strong>Max-Heap:</strong> parent &gt;= children.
+            </li>
+            <li>
+              Insert and extract-min/extract-max are O(log n); peek is O(1).
+            </li>
+            <li>
+              Priority queues are used in CPU scheduling, Dijkstra, and event
+              simulation.
+            </li>
+          </ul>
+
+          <h3>Balanced Trees (AVL / Red-Black Overview)</h3>
+          <ul>
+            <li>
+              Balanced trees maintain height near O(log n), preventing skew.
+            </li>
+            <li>AVL uses strict height balance and rotations on updates.</li>
+            <li>
+              Red-Black trees use color properties for looser balance with fast
+              updates.
+            </li>
+            <li>
+              Motivation: plain BST can degrade to O(n), balanced BST keeps
+              search/insert/delete near O(log n).
+            </li>
+          </ul>
+
+          <h3>Graph Representations and Core Algorithms</h3>
+          <ul>
+            <li>
+              <strong>Adjacency Matrix:</strong> O(V^2) space, fast edge check.
+            </li>
+            <li>
+              <strong>Adjacency List:</strong> O(V + E) space, better for sparse
+              graphs.
+            </li>
+            <li>
+              <strong>Dijkstra:</strong> shortest paths with non-negative
+              weights, typically O((V + E) log V) with heap.
+            </li>
+            <li>
+              <strong>Topological Sort:</strong> linear ordering for DAG, useful
+              in dependency scheduling.
+            </li>
+            <li>
+              <strong>MST:</strong> Kruskal and Prim build minimum spanning tree
+              for weighted undirected graphs.
+            </li>
+          </ul>
+
+          <h3>Disjoint Set Union (Union-Find)</h3>
+          <ul>
+            <li>Supports <strong>find</strong> and <strong>union</strong>.</li>
+            <li>
+              With path compression + union by rank/size, operations are almost
+              constant in practice.
+            </li>
+            <li>
+              High-yield use: cycle detection in undirected graphs, Kruskal's
+              algorithm, connected components.
+            </li>
+          </ul>
+
+          <h3>Recurrence Relations and Master Theorem</h3>
+          <ul>
+            <li>
+              Divide-and-conquer runtimes are often written as recurrences, for
+              example T(n) = 2T(n/2) + O(n).
+            </li>
+            <li>
+              Master theorem helps estimate asymptotic bounds for common forms
+              of T(n) = aT(n/b) + f(n).
+            </li>
+            <li>
+              Common exam asks: derive time complexity for merge sort, quicksort
+              average case, binary search.
+            </li>
+          </ul>
+
+          <h3>Amortized Analysis</h3>
+          <ul>
+            <li>
+              Amortized cost measures average per operation over a sequence,
+              even if occasional operations are expensive.
+            </li>
+            <li>
+              Dynamic array append is O(1) amortized, despite occasional O(n)
+              resize steps.
+            </li>
+          </ul>
+        </section>
+
         <section id="unit-pack">
           <h2>Unit Completion Pack</h2>
 
           <h3>Sorting Comparison Matrix</h3>
-          <table>
-            <tr>
-              <th>Algorithm</th>
-              <th>Best</th>
-              <th>Average</th>
-              <th>Worst</th>
-              <th>Stable</th>
-              <th>In-place</th>
-            </tr>
-            <tr>
-              <td>Bubble Sort</td>
-              <td>O(n)</td>
-              <td>O(n^2)</td>
-              <td>O(n^2)</td>
-              <td>Yes</td>
-              <td>Yes</td>
-            </tr>
-            <tr>
-              <td>Selection Sort</td>
-              <td>O(n^2)</td>
-              <td>O(n^2)</td>
-              <td>O(n^2)</td>
-              <td>No</td>
-              <td>Yes</td>
-            </tr>
-            <tr>
-              <td>Insertion Sort</td>
-              <td>O(n)</td>
-              <td>O(n^2)</td>
-              <td>O(n^2)</td>
-              <td>Yes</td>
-              <td>Yes</td>
-            </tr>
-            <tr>
-              <td>Merge Sort</td>
-              <td>O(n log n)</td>
-              <td>O(n log n)</td>
-              <td>O(n log n)</td>
-              <td>Yes</td>
-              <td>No</td>
-            </tr>
-            <tr>
-              <td>Quick Sort</td>
-              <td>O(n log n)</td>
-              <td>O(n log n)</td>
-              <td>O(n^2)</td>
-              <td>No</td>
-              <td>Yes</td>
-            </tr>
-          </table>
+          <div
+            class="table-scroll"
+            role="region"
+            aria-label="Sorting comparison table. Swipe horizontally on small screens."
+          >
+            <table>
+              <tr>
+                <th>Algorithm</th>
+                <th>Best</th>
+                <th>Average</th>
+                <th>Worst</th>
+                <th>Stable</th>
+                <th>In-place</th>
+              </tr>
+              <tr>
+                <td>Bubble Sort</td>
+                <td>O(n)</td>
+                <td>O(n^2)</td>
+                <td>O(n^2)</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Selection Sort</td>
+                <td>O(n^2)</td>
+                <td>O(n^2)</td>
+                <td>O(n^2)</td>
+                <td>No</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Insertion Sort</td>
+                <td>O(n)</td>
+                <td>O(n^2)</td>
+                <td>O(n^2)</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Merge Sort</td>
+                <td>O(n log n)</td>
+                <td>O(n log n)</td>
+                <td>O(n log n)</td>
+                <td>Yes</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Quick Sort</td>
+                <td>O(n log n)</td>
+                <td>O(n log n)</td>
+                <td>O(n^2)</td>
+                <td>No</td>
+                <td>Yes</td>
+              </tr>
+            </table>
+          </div>
 
           <h3>BFS and DFS (Worked Graph Example)</h3>
           <p><strong>Adjacency List:</strong></p>
@@ -923,6 +1044,8 @@ struct TreeNode* searchBST(struct TreeNode* root, int key) {
           <pre><code>
 int minCoinsDP(int amount, int coins[], int m) {
     int dp[100];
+
+    // Works when amount <= 99. Use dynamic allocation for larger inputs.
     dp[0] = 0;
 
     for (int i = 1; i <= amount; i++)
@@ -940,6 +1063,159 @@ int minCoinsDP(int amount, int coins[], int m) {
   </code></pre>
 
           <p><strong>Complexity:</strong> O(amount * number_of_coins)</p>
+        </section>
+
+        <section id="extra-core-topics">
+          <h2>Extra Core Topics Often Asked in Exams</h2>
+
+          <h3>Trie and String Algorithms</h3>
+          <ul>
+            <li>
+              <strong>Trie:</strong> Prefix tree for fast dictionary/prefix
+              lookup, usually O(length of key).
+            </li>
+            <li>
+              <strong>KMP:</strong> Pattern matching in O(n + m) using LPS
+              (prefix function).
+            </li>
+            <li>
+              <strong>Rabin-Karp:</strong> Rolling hash based matching; expected
+              fast for multiple pattern checks.
+            </li>
+            <li>
+              <strong>Z Algorithm:</strong> Useful for linear-time pattern
+              matching and string preprocessing.
+            </li>
+          </ul>
+
+          <h3>Range Query Data Structures</h3>
+          <ul>
+            <li>
+              <strong>Segment Tree:</strong> Range query and point/range update,
+              typically O(log n) per operation.
+            </li>
+            <li>
+              <strong>Fenwick Tree (BIT):</strong> Prefix sums and updates in
+              O(log n), simpler and memory-efficient.
+            </li>
+            <li>
+              High-yield use: range sum/min queries in competitive and exam
+              problems.
+            </li>
+          </ul>
+
+          <h3>More Graph Algorithms</h3>
+          <ul>
+            <li>
+              <strong>Bellman-Ford:</strong> Handles negative edges and detects
+              negative cycles in O(VE).
+            </li>
+            <li>
+              <strong>Floyd-Warshall:</strong> All-pairs shortest path in
+              O(V^3), good for dense/small graphs.
+            </li>
+            <li>
+              <strong>SCC (Kosaraju/Tarjan idea):</strong> Strongly connected
+              components in directed graphs.
+            </li>
+          </ul>
+
+          <h3>Backtracking and Branch and Bound</h3>
+          <ul>
+            <li>
+              <strong>Backtracking:</strong> DFS with undo/pruning, used in
+              N-Queens, Sudoku, subsets/permutations.
+            </li>
+            <li>
+              <strong>Branch and Bound:</strong> Optimization search using
+              bounds to cut suboptimal branches.
+            </li>
+            <li>
+              Common exam objective: explain the difference and show one example
+              trace.
+            </li>
+          </ul>
+
+          <h3>Complexity Classes and Computability Basics</h3>
+          <ul>
+            <li><strong>P:</strong> Solvable in polynomial time.</li>
+            <li><strong>NP:</strong> Verifiable in polynomial time.</li>
+            <li><strong>NP-Hard:</strong> At least as hard as NP problems.</li>
+            <li>
+              <strong>NP-Complete:</strong> In NP and NP-Hard; classic examples
+              include SAT and 3-SAT.
+            </li>
+            <li>Know reduction concept and why proving NP-Complete matters.</li>
+          </ul>
+        </section>
+
+        <section id="practice-bank">
+          <h2>Past-Paper Style Practice Bank</h2>
+
+          <h3>2-Mark Quick Checks</h3>
+          <ul>
+            <li>Differentiate Big O, Big Theta, and Big Omega.</li>
+            <li>Why is binary search not valid on unsorted arrays?</li>
+            <li>State one advantage of linked list over array.</li>
+            <li>When does BFS guarantee shortest path?</li>
+            <li>What is load factor in hashing?</li>
+          </ul>
+
+          <h3>5-Mark Explain Questions</h3>
+          <ul>
+            <li>Compare stack and queue with one real-world use each.</li>
+            <li>Explain collision handling: chaining vs open addressing.</li>
+            <li>Explain AVL rotations and why balancing is needed.</li>
+            <li>
+              Compare Dijkstra and Bellman-Ford (constraints and complexity).
+            </li>
+            <li>Explain greedy vs DP using coin change.</li>
+          </ul>
+
+          <h3>10-Mark Algorithm/Trace Questions</h3>
+          <ul>
+            <li>Trace quicksort and derive best/average/worst behavior.</li>
+            <li>Build BST from a sequence and perform delete on a key node.</li>
+            <li>
+              Run BFS and DFS on a given graph and classify edge behavior.
+            </li>
+            <li>
+              Solve one recurrence with master theorem and verify with tree
+              method.
+            </li>
+            <li>Implement and dry-run Union-Find with path compression.</li>
+          </ul>
+        </section>
+
+        <section id="coverage-checklist">
+          <h2>Coverage Checklist (Final Exam Readiness)</h2>
+          <p>
+            Use this checklist before exam day. If you can explain each point
+            with one dry-run example, your preparation is strong.
+          </p>
+          <ul>
+            <li>Asymptotic analysis: O, Theta, Omega, amortized analysis.</li>
+            <li>
+              Arrays, linked lists, stacks, queues, circular queues, deques.
+            </li>
+            <li>Trees: traversals, BST operations, balanced BST concepts.</li>
+            <li>Heaps and priority queues with array representation.</li>
+            <li>Hashing: collisions, chaining/open addressing, load factor.</li>
+            <li>
+              Graphs: BFS, DFS, shortest path, topological sort, MST, SCC.
+            </li>
+            <li>Searching/sorting and when to choose each algorithm.</li>
+            <li>Recurrence solving basics and master theorem patterns.</li>
+            <li>Greedy vs dynamic programming pattern recognition.</li>
+            <li>
+              Trie/string matching (KMP, Rabin-Karp, Z) for text problems.
+            </li>
+            <li>Segment tree/Fenwick tree for range query update problems.</li>
+            <li>
+              Complexity classes: P, NP, NP-Hard, NP-Complete with reductions.
+            </li>
+            <li>Typical C pitfalls: pointers, memory leaks, edge cases.</li>
+          </ul>
         </section>
 
         <!-- Addition -->
