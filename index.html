@@ -22,7 +22,7 @@
         context.
       </p>
       <div class="hero-meta">
-        <span>Core Topics: 20+</span>
+        <span>Core Topics: 25+</span>
         <span>Language: C</span>
         <span>Use Case: Interview + Fundamentals</span>
       </div>
@@ -54,6 +54,8 @@
           <li><a href="#extra-core-topics">Extra Core Topics</a></li>
           <li><a href="#unit-pack">Unit Pack</a></li>
           <li><a href="#practice-bank">Practice Bank</a></li>
+          <li><a href="#paper-2024-2025">Paper 2024/2025</a></li>
+          <li><a href="#paper-two-2024-2025">Paper Two 2024/2025</a></li>
           <li><a href="#classification">Classification</a></li>
           <li><a href="#coverage-checklist">Coverage Checklist</a></li>
         </ul>
@@ -1187,6 +1189,537 @@ int minCoinsDP(int amount, int coins[], int m) {
           </ul>
         </section>
 
+        <section id="paper-2024-2025">
+          <h2>Targeted Guide: University Exam 2024/2025 (Paper One)</h2>
+
+          <p>
+            This guide maps directly to the paper structure: answer Question One
+            and any other two. Use point-form, clear headings, and small labeled
+            diagrams to secure method marks.
+          </p>
+
+          <div class="exam-paper">
+            <article class="qa-card">
+              <h3>Question One (Compulsory)</h3>
+
+              <div class="qa-item">
+                <p class="q-label">Question 1(a) (10 marks)</p>
+                <p class="question">
+                  Suppose you are to develop an application for a mobile phone
+                  book. Suggest the data structure you will use and explain the
+                  factors guiding your choice.
+                </p>
+                <div class="answer">
+                  <p>
+                    Use a <strong>hash table</strong> as the primary structure
+                    for fast exact search by name/number, with optional
+                    <strong>trie</strong> support for prefix search while
+                    typing.
+                  </p>
+                  <ul>
+                    <li>Operation frequency: search is the dominant task.</li>
+                    <li>Expected speed: average O(1) hash lookup.</li>
+                    <li>Memory constraints on mobile devices.</li>
+                    <li>Need for ordered listing or range listing.</li>
+                    <li>Update frequency: insert/delete/edit contacts.</li>
+                    <li>Scalability as contact count increases.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="qa-item">
+                <p class="q-label">Question 1(b) (5 marks)</p>
+                <p class="question">
+                  Proper choice of a data structure results in a best possible
+                  algorithm and good program. Explain.
+                </p>
+                <div class="answer">
+                  <ul>
+                    <li>Improves running time by lowering complexity.</li>
+                    <li>Reduces memory overhead and fragmentation.</li>
+                    <li>Leads to cleaner and simpler code logic.</li>
+                    <li>Improves scalability for larger input sizes.</li>
+                    <li>Improves reliability and predictable performance.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="qa-item">
+                <p class="q-label">Question 1(c) (5 marks)</p>
+                <p class="question">
+                  Given the binary tree, construct its equivalent array
+                  representation showing all positions.
+                </p>
+                <div class="answer">
+                  <p>
+                    Use 1-based indexing: node at i has left child at 2i and
+                    right child at 2i+1. Put NULL for missing nodes.
+                  </p>
+                  <p>
+                    If the tree is root 5, children 4 and 32, and 4 has child 1,
+                    then: A[1]=5, A[2]=4, A[3]=32, A[4]=1, A[5]=NULL, A[6]=NULL,
+                    A[7]=NULL.
+                  </p>
+                </div>
+              </div>
+
+              <div class="qa-item">
+                <p class="q-label">Question 1(d) (4 marks)</p>
+                <p class="question">
+                  Differentiate between space complexity and time complexity.
+                </p>
+                <div class="answer">
+                  <ul>
+                    <li>
+                      <strong>Time complexity:</strong> growth of execution time
+                      as input size n increases.
+                    </li>
+                    <li>
+                      <strong>Space complexity:</strong> growth of memory usage
+                      as input size n increases.
+                    </li>
+                    <li>
+                      Common trade-off: lower time can require more memory.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="qa-item">
+                <p class="q-label">Question 1(e) (6 marks)</p>
+                <p class="question">
+                  Draw a binary tree for the expression A * B - (C + D) * (P /
+                  Q).
+                </p>
+                <div class="answer">
+                  <p>
+                    Root is '-', left subtree is '*' with leaves A and B. Right
+                    subtree is '*' with left child '+' (C, D) and right child
+                    '/' (P, Q).
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="qa-card">
+              <h3>Question Two</h3>
+              <div class="qa-item">
+                <p class="question">
+                  Explain tree concepts (root, size, depth, leaf, path), define
+                  algorithm and five characteristics, and compare linked lists
+                  and arrays for ADTs.
+                </p>
+                <div class="answer">
+                  <ul>
+                    <li>
+                      Root: top node; Leaf: node with no child; Size: total
+                      nodes; Depth: edges from root to node; Path: node sequence
+                      between two nodes.
+                    </li>
+                    <li>
+                      Algorithm: finite, unambiguous sequence of steps to solve
+                      a problem.
+                    </li>
+                    <li>
+                      Desirable characteristics: input, output, definiteness,
+                      finiteness, effectiveness.
+                    </li>
+                    <li>
+                      Arrays vs linked lists: arrays give O(1) random access but
+                      costly middle insert/delete; linked lists give easier
+                      insert/delete but O(n) access.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="qa-card">
+              <h3>Question Three</h3>
+              <div class="qa-item">
+                <p class="question">
+                  Areas of application, expression tree conversion, and time
+                  complexity measures.
+                </p>
+                <div class="answer">
+                  <ul>
+                    <li>
+                      Five applications: operating systems, databases,
+                      networking, compilers, graphics/games.
+                    </li>
+                    <li>
+                      For (2+y) - (a*b): root '-', left '+'(2,y), right
+                      '*'(a,b).
+                    </li>
+                    <li>Prefix: - + 2 y * a b.</li>
+                    <li>Postfix: 2 y + a b * -.</li>
+                    <li>
+                      Time complexity measures: best-case, average-case,
+                      worst-case.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="qa-card">
+              <h3>Question Four</h3>
+              <div class="qa-item">
+                <p class="question">
+                  Stack definition, sequential search, inbox simulation, and
+                  adjacency matrix.
+                </p>
+                <div class="answer">
+                  <ul>
+                    <li>
+                      Stack: linear LIFO ADT where insertion/deletion happen at
+                      the top.
+                    </li>
+                    <li>
+                      Sequential search: scan elements one by one; O(n) time.
+                    </li>
+                    <li>
+                      Inbox simulation uses a queue (FIFO); insert function is
+                      enqueue.
+                    </li>
+                    <li>
+                      For adjacency matrix, follow node order exactly (a,b,c,d)
+                      and place 1 for edges, 0 otherwise.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="qa-card">
+              <h3>Question Five</h3>
+              <div class="qa-item">
+                <p class="question">
+                  Heap definition and mapping, selection sort, and queue
+                  applications.
+                </p>
+                <div class="answer">
+                  <ul>
+                    <li>
+                      Heap: complete binary tree that satisfies heap-order
+                      property.
+                    </li>
+                    <li>
+                      Mapping array to heap shape: place values level-order from
+                      left to right.
+                    </li>
+                    <li>
+                      Selection sort: repeatedly pick minimum from unsorted part
+                      and swap with first unsorted index.
+                    </li>
+                    <li>
+                      Queue uses: CPU scheduling, printer queue, BFS, buffering,
+                      producer-consumer pipelines.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="qa-card">
+              <h3>Exam Strategy for This Paper</h3>
+              <div class="qa-item">
+                <p class="question">How to maximize marks in 2 hours.</p>
+                <div class="answer">
+                  <ul>
+                    <li>Answer Q1 first and capture compulsory marks early.</li>
+                    <li>
+                      Pick two optional questions where you can draw/trace fast.
+                    </li>
+                    <li>
+                      For 10-mark questions, write 6 to 8 concise points with
+                      one example.
+                    </li>
+                    <li>
+                      Always include complexity where relevant for final marks.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="paper-two-2024-2025">
+          <h2>Targeted Guide: University Exam 2024/2025 (Paper Two)</h2>
+
+          <p>
+            This section bundles each paper question with a model answer
+            framework. Keep answers concise and structured to match mark
+            allocation.
+          </p>
+
+          <div class="exam-paper">
+            <article class="qa-card">
+              <h3>Question One (Compulsory)</h3>
+
+              <div class="qa-item">
+                <p class="q-label">Question 1(a) (4 marks)</p>
+                <p class="question">
+                  Define: directed graph, abstract data type (ADT), pendant,
+                  heap.
+                </p>
+                <div class="answer">
+                  <ul>
+                    <li>
+                      <strong>Directed graph:</strong> graph where edges have
+                      direction (u,v) and (v,u) are different.
+                    </li>
+                    <li>
+                      <strong>ADT:</strong> logical specification of data and
+                      operations independent of implementation.
+                    </li>
+                    <li>
+                      <strong>Pendant (leaf vertex):</strong> vertex with degree
+                      1 in an undirected graph.
+                    </li>
+                    <li>
+                      <strong>Heap:</strong> complete binary tree satisfying
+                      heap-order property.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="qa-item">
+                <p class="q-label">Question 1(b) (4 marks)</p>
+                <p class="question">
+                  Discuss any two advantages of linked list over linear list
+                  (array-based list).
+                </p>
+                <div class="answer">
+                  <ul>
+                    <li>Dynamic sizing without fixed capacity declaration.</li>
+                    <li>
+                      Faster insertion/deletion at known positions without
+                      shifting elements.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="qa-item">
+                <p class="q-label">Question 1(c) (8 marks)</p>
+                <p class="question">
+                  Write C++ statements to check whether a circular queue is full
+                  or empty.
+                </p>
+                <div class="answer">
+                  <pre><code>
+// Assume size N, front and rear initialized to -1 when empty
+bool isEmpty = (front == -1);
+bool isFull = ((rear + 1) % N == front);
+                  </code></pre>
+                </div>
+              </div>
+
+              <div class="qa-item">
+                <p class="q-label">Question 1(d)-(g) (14 marks)</p>
+                <p class="question">
+                  Outline five data structures, tree application areas, data
+                  encapsulation and merits, and space complexity importance.
+                </p>
+                <div class="answer">
+                  <ul>
+                    <li>
+                      Five data structures: array, linked list, stack, queue,
+                      tree.
+                    </li>
+                    <li>
+                      Tree applications: file systems, DB indexing, compiler
+                      syntax trees.
+                    </li>
+                    <li>
+                      Data encapsulation: bundling data with methods and
+                      restricting direct access.
+                    </li>
+                    <li>
+                      Merits: data hiding, modularity, safer updates, easier
+                      maintenance.
+                    </li>
+                    <li>
+                      Space complexity: memory growth with input size n; crucial
+                      for scalability and memory-constrained environments.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="qa-card">
+              <h3>Question Two</h3>
+              <div class="qa-item">
+                <p class="question">
+                  String ADT, array-list insert/delete, heap operations +
+                  heapsort, and merge sort code section.
+                </p>
+                <div class="answer">
+                  <ul>
+                    <li>
+                      String ADT: collection of characters with operations like
+                      length, concatenate, substring, compare.
+                    </li>
+                  </ul>
+                  <pre><code>
+// Insert at index i in array list
+for (int j = n; j > i; --j) arr[j] = arr[j - 1];
+arr[i] = item;
+n++;
+
+// Delete at index i
+for (int j = i; j < n - 1; ++j) arr[j] = arr[j + 1];
+n--;
+                  </code></pre>
+                  <ul>
+                    <li>
+                      Heap operations: insert, delete-root/extract,
+                      heapify/down-heap, up-heap, build-heap.
+                    </li>
+                    <li>
+                      Heapsort process: build max-heap, swap root with end,
+                      reduce heap size, heapify, repeat.
+                    </li>
+                  </ul>
+                  <pre><code>
+void mergeSort(int a[], int l, int r) {
+    if (l >= r) return;
+    int m = l + (r - l) / 2;
+    mergeSort(a, l, m);
+    mergeSort(a, m + 1, r);
+    merge(a, l, m, r);
+}
+                  </code></pre>
+                </div>
+              </div>
+            </article>
+
+            <article class="qa-card">
+              <h3>Question Three</h3>
+              <div class="qa-item">
+                <p class="question">
+                  Stack ADT, sequential vs binary search, stack trace,
+                  traversals, and BST pseudocode.
+                </p>
+                <div class="answer">
+                  <ul>
+                    <li>
+                      Stack ADT: LIFO structure with push, pop, peek, isEmpty.
+                    </li>
+                    <li>
+                      Sequential search O(n) on unsorted data; binary search
+                      O(log n) on sorted data.
+                    </li>
+                    <li>Push 40, 50, 30 gives top-to-bottom: 30, 50, 40.</li>
+                    <li>
+                      After PUSH(70), PUSH(80), PUSH(90), POP(), PUSH(77),
+                      POP(): removed values are 90 then 77.
+                    </li>
+                    <li>
+                      Tree traversals required: preorder, inorder, postorder;
+                      and level-order if lecturer expects all orders.
+                    </li>
+                  </ul>
+                  <pre><code>
+BST_BinarySearch(arr, n, key):
+    left <- 0
+    right <- n - 1
+    while left <= right:
+        mid <- left + (right - left) / 2
+        if arr[mid] == key: return mid
+        else if arr[mid] < key: left <- mid + 1
+        else: right <- mid - 1
+    return -1
+                  </code></pre>
+                </div>
+              </div>
+            </article>
+
+            <article class="qa-card">
+              <h3>Question Four</h3>
+              <div class="qa-item">
+                <p class="question">
+                  Convert infix to prefix/postfix, implement push/pop, define
+                  BST and properties, and sequential search algorithm.
+                </p>
+                <div class="answer">
+                  <ul>
+                    <li>(A+B)*C -> Prefix: * + A B C, Postfix: A B + C *</li>
+                    <li>A+B*C -> Prefix: + A * B C, Postfix: A B C * +</li>
+                    <li>A-B+C -> Prefix: + - A B C, Postfix: A B - C +</li>
+                  </ul>
+                  <pre><code>
+void push(int x) {
+    if (top == MAX - 1) return;
+    st[++top] = x;
+}
+
+int pop() {
+    if (top == -1) return -1;
+    return st[top--];
+}
+                  </code></pre>
+                  <ul>
+                    <li>
+                      BST definition: binary tree where left subtree keys are
+                      less than root, right subtree keys are greater.
+                    </li>
+                    <li>
+                      Four properties: ordering rule, recursive BST subtrees, no
+                      duplicates (if defined that way), inorder gives sorted
+                      order.
+                    </li>
+                  </ul>
+                  <pre><code>
+SequentialSearch(arr, n, key):
+    for i <- 0 to n - 1:
+        if arr[i] == key: return i
+    return -1
+                  </code></pre>
+                </div>
+              </div>
+            </article>
+
+            <article class="qa-card">
+              <h3>Question Five</h3>
+              <div class="qa-item">
+                <p class="question">
+                  Dijkstra shortest path, desirable algorithm traits, heap
+                  adjustments, and tree term definitions.
+                </p>
+                <div class="answer">
+                  <ul>
+                    <li>
+                      Dijkstra method: initialize distances, repeatedly select
+                      smallest unvisited node, relax outgoing edges.
+                    </li>
+                    <li>
+                      If graph diagram is unclear, show full table format (dist,
+                      parent, visited) to earn method marks.
+                    </li>
+                    <li>
+                      Good algorithm traits: correctness, finiteness,
+                      definiteness, efficiency.
+                    </li>
+                    <li>
+                      Down-heap then up-heap of value 10: place value, restore
+                      heap-order by swapping with parent/child as required.
+                    </li>
+                    <li>
+                      Siblings: nodes sharing same parent; depth: edges from
+                      root; leaf: node with no children.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
         <section id="coverage-checklist">
           <h2>Coverage Checklist (Final Exam Readiness)</h2>
           <p>
@@ -1241,6 +1774,31 @@ int minCoinsDP(int amount, int coins[], int m) {
           toc.classList.remove("active");
           toggleBtn.setAttribute("aria-expanded", "false");
           document.body.classList.remove("menu-open");
+        });
+      });
+
+      // Make exam cards collapsible for faster revision on mobile and desktop.
+      document.querySelectorAll(".qa-card").forEach((card) => {
+        const heading = card.querySelector("h3");
+        if (!heading) return;
+
+        card.classList.add("is-collapsible");
+        heading.setAttribute("role", "button");
+        heading.setAttribute("tabindex", "0");
+        heading.setAttribute("aria-expanded", "true");
+
+        const toggleCard = () => {
+          card.classList.toggle("collapsed");
+          const expanded = !card.classList.contains("collapsed");
+          heading.setAttribute("aria-expanded", String(expanded));
+        };
+
+        heading.addEventListener("click", toggleCard);
+        heading.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            toggleCard();
+          }
         });
       });
     </script>
